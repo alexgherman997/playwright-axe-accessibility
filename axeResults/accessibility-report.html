@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Test Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .summary {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            margin: 20px;
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+        .summary-item {
+            text-align: center;
+            padding: 10px;
+        }
+        .summary-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+        pre code {
+            font-size: 0.9em;
+        }
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Accessibility Test Report</h1>
+            <p>Generated on 7/17/2025, 3:01:58 PM</p>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-item">
+                <span class="summary-number" style="color: #dc3545;">22</span>
+                <span>Total Violations</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-number" style="color: #28a745;">61</span>
+                <span>Total Passed</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-number" style="color: #007bff;">1</span>
+                <span>Tests Run</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-number" style="color: #dc3545;">1</span>
+                <span>Tests with Issues</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>Test Results</h2>
+            
+    <div class="test-result" style="border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 30px; overflow: hidden;">
+      <div class="test-header" style="background: #f8d7da; padding: 20px; border-bottom: 1px solid #dee2e6;">
+        <h2 style="margin: 0 0 10px 0; color: #721c24;">
+          example-gov-page
+        </h2>
+        <p style="margin: 0; color: #6c757d;"><strong>URL:</strong> https://alphagov.github.io/accessibility-tool-audit/test-cases.html#content</p>
+        <p style="margin: 5px 0 0 0; color: #6c757d;"><strong>Tested:</strong> 7/17/2025, 3:01:52 PM</p>
+        
+        <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+          <div style="background: #f5c6cb; padding: 10px; border-radius: 5px;">
+            <strong>22</strong> Violations
+          </div>
+          <div style="background: #d1ecf1; padding: 10px; border-radius: 5px;">
+            <strong>61</strong> Passed
+          </div>
+          <div style="background: #f8f9fa; padding: 10px; border-radius: 5px;">
+            <strong>25</strong> Inapplicable
+          </div>
+          <div style="background: #fff3cd; padding: 10px; border-radius: 5px;">
+            <strong>5</strong> Incomplete
+          </div>
+        </div>
+      </div>
+      
+      <div class="test-content" style="padding: 20px;">
+        <div class="violations">
+            <h3 style="color: #dc3545; margin-bottom: 20px;">Accessibility Violations (22)</h3>
+            
+    <div class="violation-item" style="border-left: 4px solid #17a2b8; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #17a2b8; margin: 0 0 10px 0;">
+        1. aria-allowed-role: ARIA role should be appropriate for the element
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          MINOR
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure role attribute has an appropriate value for the element</p>
+      <p><strong>WCAG Guidelines:</strong> </p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/aria-allowed-role?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/aria-allowed-role?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><img alt="Decorative line clipart" height="118" role="presentation" src="assets/test_images/decoration.png" width="368"></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  ARIA role presentation is not allowed for given element</p>
+              <p><strong>Selector:</strong> img[alt="Decorative line clipart"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #dc3545; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #dc3545; margin: 0 0 10px 0;">
+        2. aria-roles: ARIA roles used must conform to valid values
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          CRITICAL
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure all elements with a role attribute use a valid value</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag412</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/aria-roles?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/aria-roles?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><ol class="group" role="breadcrumbs">
+<li><a href="/">Home</a></li>
+<li><a href="/browse/housing-local-services">Housing and local services</a></li>
+<li><strong><a href="/browse/housing-local-services/local-councils">Local councils and services</a></strong></li>
+</ol></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  Role must be one of the valid ARIA roles: breadcrumbs</p>
+              <p><strong>Selector:</strong> ol[role="breadcrumbs"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        3. blink: <blink> elements are deprecated and must not be used
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure <blink> elements are not used</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag222</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/blink?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/blink?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><blink></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  Element is visible</p>
+              <p><strong>Selector:</strong> blink</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #dc3545; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #dc3545; margin: 0 0 10px 0;">
+        4. button-name: Buttons must have discernible text
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          CRITICAL
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure buttons have discernible text</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag412</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/button-name?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/button-name?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><button></button></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have inner text that is visible to screen readers
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> .example:nth-child(187) > button</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        5. color-contrast: Elements must meet minimum color contrast ratio thresholds
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2aa, wcag143</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (5)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><p class="low-contrast-small-aa">This small text does not have enough contrast with it's background</p></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has insufficient color contrast of 4.37 (foreground color: #757980, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1</p>
+              <p><strong>Selector:</strong> .low-contrast-small-aa</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 2:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><p class="low-contrast-large-aa">This small text does not have enough contrast with it's background</p></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has insufficient color contrast of 3.4 (foreground color: #878c8c, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1</p>
+              <p><strong>Selector:</strong> .example:nth-child(23) > .low-contrast-large-aa</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 3:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><p class="low-contrast-small-aaa">This small text does not have enough contrast with it's background</p></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has insufficient color contrast of 2.86 (foreground color: #9499a1, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1</p>
+              <p><strong>Selector:</strong> .low-contrast-small-aaa</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 4:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><p class="low-contrast-large-aa">This small text does not have enough contrast with it's background</p></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has insufficient color contrast of 3.4 (foreground color: #878c8c, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1</p>
+              <p><strong>Selector:</strong> .example:nth-child(27) > .low-contrast-large-aa</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 5:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><div class="validation-summary" role="alert">
+                You need to fix the errors on this page before continuing.
+            </div></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has insufficient color contrast of 1.24 (foreground color: #ffffff, background color: #fae1e1, font size: 14.3pt (19px), font weight: normal). Expected contrast ratio of 4.5:1</p>
+              <p><strong>Selector:</strong> .error-poor-contrast > .validation-summary[role="alert"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        6. dlitem: <dt> and <dd> elements must be contained by a <dl>
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure <dt> and <dd> elements are contained by a <dl></p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag131</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/dlitem?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/dlitem?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (2)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><dt>html</dt></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Description list item does not have a <dl> parent element</p>
+              <p><strong>Selector:</strong> .example:nth-child(88) > dt</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 2:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><dd>a markup language for describing web documents</dd></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Description list item does not have a <dl> parent element</p>
+              <p><strong>Selector:</strong> .example:nth-child(88) > dd</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #17a2b8; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #17a2b8; margin: 0 0 10px 0;">
+        7. empty-heading: Headings should not be empty
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          MINOR
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure headings have discernible text</p>
+      <p><strong>WCAG Guidelines:</strong> </p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/empty-heading?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/empty-heading?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><h4></h4></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have text that is visible to screen readers
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute</p>
+              <p><strong>Selector:</strong> .example:nth-child(75) > h4</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #17a2b8; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #17a2b8; margin: 0 0 10px 0;">
+        8. empty-table-header: Table header text should not be empty
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          MINOR
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure table headers have discernible text</p>
+      <p><strong>WCAG Guidelines:</strong> </p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/empty-table-header?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/empty-table-header?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><th></th></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have text that is visible to screen readers</p>
+              <p><strong>Selector:</strong> .example:nth-child(111) > table > thead > tr > th:nth-child(1)</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        9. frame-title: Frames must have an accessible name
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure <iframe> and <frame> elements have an accessible name</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag412</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/frame-title?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/frame-title?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><iframe height="100" src="example-pages/demo.html" width="300"></iframe></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has no title attribute
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> .example:nth-child(269) > iframe[height="100"][src$="demo.html"][width="300"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #ffc107; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #ffc107; margin: 0 0 10px 0;">
+        10. heading-order: Heading levels should only increase by one
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #ffc107; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          MODERATE
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure the order of headings is semantically correct</p>
+      <p><strong>WCAG Guidelines:</strong> </p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/heading-order?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/heading-order?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (2)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><h5>Heading 5</h5></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Heading order invalid</p>
+              <p><strong>Selector:</strong> h5</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 2:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><h3 class="heading-medium" id="frames-iframe-title-attribute-does-not-describe-the-content-or-purpose-of-the-iframe"></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Heading order invalid</p>
+              <p><strong>Selector:</strong> #frames-iframe-title-attribute-does-not-describe-the-content-or-purpose-of-the-iframe</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #dc3545; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #dc3545; margin: 0 0 10px 0;">
+        11. image-alt: Images must have alternative text
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          CRITICAL
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure <img> elements have alternative text or a role of none or presentation</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag111</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/image-alt?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/image-alt?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><img src="assets/test_images/bbc-blocks-dark.png"></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an alt attribute
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> .example:nth-child(120) > img</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #17a2b8; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #17a2b8; margin: 0 0 10px 0;">
+        12. image-redundant-alt: Alternative text of images should not be repeated as text
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #17a2b8; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          MINOR
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure image alternative is not repeated as text</p>
+      <p><strong>WCAG Guidelines:</strong> </p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/image-redundant-alt?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/image-redundant-alt?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><img alt="Red Panda" height="165" src="assets/test_images/red_panda.jpg" width="220"></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  Element contains <img> element with alt text that duplicates existing text</p>
+              <p><strong>Selector:</strong> .example:nth-child(174) > a > img[alt="Red Panda"][height="165"][width="220"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #dc3545; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #dc3545; margin: 0 0 10px 0;">
+        13. input-image-alt: Image buttons must have alternative text
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          CRITICAL
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure <input type="image"> elements have alternative text</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag111, wcag412</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/input-image-alt?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/input-image-alt?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (2)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input src="assets/test_images/submit.png" type="image" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has no alt attribute
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label></p>
+              <p><strong>Selector:</strong> .example:nth-child(185) > input[src$="submit.png"][type="image"]</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 2:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input alt="" src="assets/test_images/submit.png" type="image" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has an empty alt attribute
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label></p>
+              <p><strong>Selector:</strong> input[src$="submit.png"][type="image"][alt=""]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #dc3545; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #dc3545; margin: 0 0 10px 0;">
+        14. label: Form elements must have labels
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          CRITICAL
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure every form element has a label</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag412</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/label?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/label?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (8)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input id="missing-labels-month" type="text" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> #missing-labels-month</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 2:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input id="missing-labels-year" type="text" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> #missing-labels-year</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 3:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input type="text" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> .example:nth-child(204) > form > input[type="text"]</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 4:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input id="label-for-not-matching" type="checkbox" value="yes" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> #label-for-not-matching</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 5:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input id="empty" type="text" value="" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> #empty</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 6:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input id="nationality_british" name="nationality.british" type="checkbox" value="true" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> #nationality_british</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 7:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input id="nationality_irish" name="nationality.irish" type="checkbox" value="true" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> #nationality_irish</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 8:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><input id="nationality_hasOtherCountry" name="nationality.hasOtherCountry" type="checkbox" value="true" style=""></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element does not have an implicit (wrapped) <label>
+  Element does not have an explicit <label>
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element has no placeholder attribute
+  Element's default semantics were not overridden with role="none" or role="presentation"</p>
+              <p><strong>Selector:</strong> #nationality_hasOtherCountry</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #ffc107; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #ffc107; margin: 0 0 10px 0;">
+        15. landmark-unique: Landmarks should have a unique role or role/label/title (i.e. accessible name) combination
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #ffc107; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          MODERATE
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure landmarks are unique</p>
+      <p><strong>WCAG Guidelines:</strong> </p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><nav></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable</p>
+              <p><strong>Selector:</strong> .column-two-thirds > nav</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        16. link-name: Links must have discernible text
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure links have discernible text</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag244, wcag412</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/link-name?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/link-name?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (2)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><a href="http://www.bbc.co.uk"><img alt="" src="assets/test_images/bbc-blocks-dark.png"></a></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  Element is in tab order and does not have accessible text
+
+Fix any of the following:
+  Element does not have text that is visible to screen readers
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute</p>
+              <p><strong>Selector:</strong> a[href$="www.bbc.co.uk"]</p>
+            </div>
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 2:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><a href="http://www.google.com"></a></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  Element is in tab order and does not have accessible text
+
+Fix any of the following:
+  Element does not have text that is visible to screen readers
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute</p>
+              <p><strong>Selector:</strong> .example:nth-child(164) > a[href$="www.google.com"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        17. list: <ul> and <ol> must only directly contain <li>, <script> or <template> elements
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure that lists are structured correctly</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag131</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/list?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/list?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><ul>
+<ul>
+<li>improperly nested</li>
+</ul>
+</ul></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  List element has direct children that are not allowed: ul</p>
+              <p><strong>Selector:</strong> .example:nth-child(90) > ul</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        18. listitem: <li> elements must be contained in a <ul> or <ol>
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure <li> elements are used semantically</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag131</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/listitem?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/listitem?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><li>
+            no parent
+        </li></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  List item does not have a <ul>, <ol> parent element</p>
+              <p><strong>Selector:</strong> .example:nth-child(84) > li</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        19. marquee: <marquee> elements are deprecated and must not be used
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure <marquee> elements are not used</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag222</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/marquee?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/marquee?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><marquee>The BLINK and MARQUEE element animates content in a way that cannot be overridden or disabled by the user.</marquee></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  Element is visible</p>
+              <p><strong>Selector:</strong> marquee</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        20. scrollable-region-focusable: Scrollable region must have keyboard access
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure elements that have scrollable content are accessible by keyboard</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2a, wcag211, wcag213</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><div class="constrained-box"></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element should have focusable content
+  Element should be focusable</p>
+              <p><strong>Selector:</strong> .constrained-box</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        21. tabindex: Elements should not have tabindex greater than zero
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure tabindex attribute values are not greater than 0</p>
+      <p><strong>WCAG Guidelines:</strong> </p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/tabindex?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/tabindex?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><a href="page.html" tabindex="5">A link with a tabindex greater than 0</a></code></pre>
+              <p><strong>Issue:</strong> Fix any of the following:
+  Element has a tabindex greater than 0</p>
+              <p><strong>Selector:</strong> .example:nth-child(242) > a[href$="page.html"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+    <div class="violation-item" style="border-left: 4px solid #fd7e14; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
+      <h4 style="color: #fd7e14; margin: 0 0 10px 0;">
+        22. valid-lang: lang attribute must have a valid value
+      </h4>
+      <div style="margin-bottom: 10px;">
+        <span style="background: #fd7e14; color: white; padding: 2px 8px; border-radius: 3px; font-size: 0.8em;">
+          SERIOUS
+        </span>
+      </div>
+      <p><strong>Description:</strong> Ensure lang attributes have valid values</p>
+      <p><strong>WCAG Guidelines:</strong> wcag2aa, wcag312</p>
+      <p><strong>Help URL:</strong> <a href="https://dequeuniversity.com/rules/axe/4.10/valid-lang?application=playwright" target="_blank">https://dequeuniversity.com/rules/axe/4.10/valid-lang?application=playwright</a></p>
+      <details style="margin-top: 10px;">
+        <summary><strong>Affected Elements (1)</strong></summary>
+        <div style="margin-top: 10px;">
+          
+            <div style="background: white; padding: 10px; margin: 5px 0; border-radius: 3px;">
+              <strong>Element 1:</strong>
+              <pre style="background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto;"><code><span lang="frrr">"Allons, Madame plaisante!"</span></code></pre>
+              <p><strong>Issue:</strong> Fix all of the following:
+  Value of lang attribute not included in the list of valid languages</p>
+              <p><strong>Selector:</strong> span[lang="frrr"]</p>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  
+          </div>
+      </div>
+    </div>
+  
+        </div>
+        
+        <div class="footer">
+            <p>This report was generated automatically by the Axe HTML Reporter</p>
+            <p>Powered by <a href="https://www.deque.com/axe/" target="_blank">axe-core</a> and <a href="https://playwright.dev/" target="_blank">Playwright</a></p>
+        </div>
+    </div>
+</body>
+</html>
+  
