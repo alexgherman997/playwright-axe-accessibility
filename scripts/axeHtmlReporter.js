@@ -23,6 +23,25 @@ function formatTimestamp(timestamp) {
   return new Date(timestamp).toLocaleString();
 }
 
+function calculateViolationBreakdown(violations) {
+  const breakdown = {
+    critical: { count: 0, nodes: 0 },
+    serious: { count: 0, nodes: 0 },
+    moderate: { count: 0, nodes: 0 },
+    minor: { count: 0, nodes: 0 }
+  };
+
+  violations.forEach(violation => {
+    const impact = violation.impact;
+    if (breakdown[impact]) {
+      breakdown[impact].count++;
+      breakdown[impact].nodes += violation.nodes.length;
+    }
+  });
+
+  return breakdown;
+}
+
 function generateViolationHtml(violation, index) {
   return `
     <div class="violation-item" style="border-left: 4px solid ${getImpactColor(violation.impact)}; margin-bottom: 20px; padding: 15px; background: #f8f9fa;">
@@ -61,6 +80,10 @@ function generateTestResultHtml(testData) {
   const inaccessibleCount = results.inapplicable ? results.inapplicable.length : 0;
   const incompleteCount = results.incomplete ? results.incomplete.length : 0;
 
+  // Calculate violation breakdown by severity
+  const violationBreakdown = calculateViolationBreakdown(results.violations || []);
+  const totalNodes = Object.values(violationBreakdown).reduce((sum, item) => sum + item.nodes, 0);
+
   return `
     <div class="test-result" style="border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 30px; overflow: hidden;">
       <div class="test-header" style="background: ${violationCount === 0 ? '#d4edda' : '#f8d7da'}; padding: 20px; border-bottom: 1px solid #dee2e6;">
@@ -84,6 +107,49 @@ function generateTestResultHtml(testData) {
             <strong>${incompleteCount}</strong> Incomplete
           </div>
         </div>
+
+        ${violationCount > 0 ? `
+        <div style="margin-top: 20px;">
+          <h4 style="margin: 0 0 10px 0; color: #721c24;">Violation Breakdown by Severity</h4>
+          <div style="background: white; border-radius: 5px; overflow: hidden; border: 1px solid #dee2e6;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+              <thead>
+                <tr style="background: #f8f9fa;">
+                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #dc3545;">Critical</th>
+                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #fd7e14;">Serious</th>
+                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #ffc107;">Moderate</th>
+                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #17a2b8;">Minor</th>
+                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #6c757d;">Total (Nodes)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6;">
+                    <div style="color: #dc3545; font-weight: bold;">${violationBreakdown.critical.count}</div>
+                    <div style="font-size: 0.8em; color: #6c757d;">(${violationBreakdown.critical.nodes} nodes)</div>
+                  </td>
+                  <td style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6;">
+                    <div style="color: #fd7e14; font-weight: bold;">${violationBreakdown.serious.count}</div>
+                    <div style="font-size: 0.8em; color: #6c757d;">(${violationBreakdown.serious.nodes} nodes)</div>
+                  </td>
+                  <td style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6;">
+                    <div style="color: #ffc107; font-weight: bold;">${violationBreakdown.moderate.count}</div>
+                    <div style="font-size: 0.8em; color: #6c757d;">(${violationBreakdown.moderate.nodes} nodes)</div>
+                  </td>
+                  <td style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6;">
+                    <div style="color: #17a2b8; font-weight: bold;">${violationBreakdown.minor.count}</div>
+                    <div style="font-size: 0.8em; color: #6c757d;">(${violationBreakdown.minor.nodes} nodes)</div>
+                  </td>
+                  <td style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6;">
+                    <div style="color: #6c757d; font-weight: bold;">${violationCount}</div>
+                    <div style="font-size: 0.8em; color: #6c757d;">(${totalNodes} nodes)</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        ` : ''}
       </div>
       
       <div class="test-content" style="padding: 20px;">
@@ -135,6 +201,11 @@ function generateHtmlReport() {
   const totalViolations = testResults.reduce((sum, test) => sum + (test.results.violations?.length || 0), 0);
   const totalPassed = testResults.reduce((sum, test) => sum + (test.results.passes?.length || 0), 0);
   const testsWithViolations = testResults.filter(test => test.results.violations?.length > 0).length;
+
+  // Calculate overall violation breakdown by severity
+  const allViolations = testResults.flatMap(test => test.results.violations || []);
+  const overallBreakdown = calculateViolationBreakdown(allViolations);
+  const overallTotalNodes = Object.values(overallBreakdown).reduce((sum, item) => sum + item.nodes, 0);
 
   // Generate HTML report
   const html = `
@@ -228,6 +299,51 @@ function generateHtmlReport() {
                 <span>Tests with Issues</span>
             </div>
         </div>
+
+        ${totalViolations > 0 ? `
+        <div style="margin: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden;">
+            <div style="background: #f8f9fa; padding: 15px; border-bottom: 1px solid #dee2e6;">
+                <h3 style="margin: 0; color: #495057;">📊 Overall Violation Breakdown by Severity</h3>
+            </div>
+            <div style="padding: 20px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 1.1em;">
+                    <thead>
+                        <tr style="background: #f8f9fa;">
+                            <th style="padding: 12px; text-align: center; border: 1px solid #dee2e6; color: #dc3545;">Critical</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #dee2e6; color: #fd7e14;">Serious</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #dee2e6; color: #ffc107;">Moderate</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #dee2e6; color: #17a2b8;">Minor</th>
+                            <th style="padding: 12px; text-align: center; border: 1px solid #dee2e6; color: #6c757d;">Total (Nodes)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #dee2e6;">
+                                <div style="color: #dc3545; font-weight: bold; font-size: 1.5em;">${overallBreakdown.critical.count}</div>
+                                <div style="font-size: 0.9em; color: #6c757d;">(${overallBreakdown.critical.nodes} nodes)</div>
+                            </td>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #dee2e6;">
+                                <div style="color: #fd7e14; font-weight: bold; font-size: 1.5em;">${overallBreakdown.serious.count}</div>
+                                <div style="font-size: 0.9em; color: #6c757d;">(${overallBreakdown.serious.nodes} nodes)</div>
+                            </td>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #dee2e6;">
+                                <div style="color: #ffc107; font-weight: bold; font-size: 1.5em;">${overallBreakdown.moderate.count}</div>
+                                <div style="font-size: 0.9em; color: #6c757d;">(${overallBreakdown.moderate.nodes} nodes)</div>
+                            </td>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #dee2e6;">
+                                <div style="color: #17a2b8; font-weight: bold; font-size: 1.5em;">${overallBreakdown.minor.count}</div>
+                                <div style="font-size: 0.9em; color: #6c757d;">(${overallBreakdown.minor.nodes} nodes)</div>
+                            </td>
+                            <td style="padding: 15px; text-align: center; border: 1px solid #dee2e6;">
+                                <div style="color: #6c757d; font-weight: bold; font-size: 1.5em;">${totalViolations}</div>
+                                <div style="font-size: 0.9em; color: #6c757d;">(${overallTotalNodes} nodes)</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        ` : ''}
         
         <div class="content">
             <h2>Test Results</h2>

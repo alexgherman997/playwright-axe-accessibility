@@ -11,7 +11,7 @@ test.describe('Accessibility Tests', () => {
     
     // Run accessibility tests with custom test name
     const accessibilityResults = await testAccessibility(page, {
-      testName: 'example-gov-page'
+      testName: 'example-accessibility-page'
     });
     
     // Output the results to the console (useful for debugging)

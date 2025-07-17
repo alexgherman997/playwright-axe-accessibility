@@ -33,10 +33,9 @@ export interface AccessibilityTestOptions {
  * @returns Promise with axe results
  */
 export async function testAccessibility(page: Page, options: AccessibilityTestOptions = {}) {
-  // Create timestamp for unique file naming
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+  // Use test name without timestamp for consistent file naming
   const testName = options.testName || 'accessibility-test';
-  const baseFilename = `${testName}-${timestamp}`;
+  const baseFilename = testName; // Removed timestamp to allow overwriting
   
   // Ensure axeResults directory exists
   const axeResultsDir = path.join(process.cwd(), 'axeResults');
