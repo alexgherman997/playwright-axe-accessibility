@@ -8,8 +8,8 @@ This project demonstrates how to integrate axe-core with Playwright for automate
 - WCAG 2.0 and 2.1 compliance testing 
 - Customizable tests with options to include/exclude elements
 - Detailed reporting of accessibility violations
-- **NEW**: Automatic capture of screenshots, HTML content, and JSON results
-- **NEW**: Comprehensive HTML reporting with visual violation details
+- Automatic capture of screenshots, HTML content, and JSON results
+- Comprehensive HTML reporting with visual violation details
 
 ## Prerequisites
 
@@ -31,29 +31,12 @@ This project demonstrates how to integrate axe-core with Playwright for automate
 
 ## Running the Tests
 
-Run all accessibility tests:
-
-```
-npm test
-```
-
 Run accessibility tests specifically:
 
 ```
 npm run test:accessibility
 ```
 
-Run tests with the UI mode:
-
-```
-npx playwright test --ui
-```
-
-Run tests only in a specific browser:
-
-```
-npx playwright test --project=chromium
-```
 
 Generate an HTML report from test results:
 
@@ -77,35 +60,6 @@ Every accessibility test automatically generates the following files in the `axe
 - `/axeResults` - Contains test artifacts (screenshots, JSON results, HTML content)
 - `/scripts` - Contains the HTML report generator
 - `/playwright.config.ts` - Playwright configuration
-
-## How to Create Your Own Tests
-
-1. Create a new test file in the `/tests` directory
-2. Import the accessibility utilities:
-
-```typescript
-import { testAccessibility, formatViolations } from '../utils/accessibility';
-```
-
-3. Write your test using the Playwright test framework:
-
-```typescript
-import { test, expect } from '@playwright/test';
-import { testAccessibility, formatViolations } from '../utils/accessibility';
-
-test('should check accessibility of my website', async ({ page }) => {
-  await page.goto('https://my-website.com/');
-  await page.waitForLoadState('networkidle');
-  
-  const accessibilityResults = await testAccessibility(page, {
-    testName: 'my-website-homepage' // Optional: custom name for better file organization
-  });
-  console.log(formatViolations(accessibilityResults));
-  
-  const violations = accessibilityResults.violations.length;
-  expect(violations, formatViolations(accessibilityResults)).toBe(0);
-});
-```
 
 ## Customizing Accessibility Tests
 
