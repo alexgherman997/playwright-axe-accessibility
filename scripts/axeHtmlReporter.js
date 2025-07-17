@@ -115,11 +115,11 @@ function generateTestResultHtml(testData) {
             <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
               <thead>
                 <tr style="background: #f8f9fa;">
-                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #dc3545;">Critical</th>
-                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #fd7e14;">Serious</th>
-                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #ffc107;">Moderate</th>
-                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #17a2b8;">Minor</th>
-                  <th style="padding: 8px 12px; text-align: left; border-bottom: 1px solid #dee2e6; color: #6c757d;">Total (Nodes)</th>
+                  <th style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6; color: #dc3545;">Critical</th>
+                  <th style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6; color: #fd7e14;">Serious</th>
+                  <th style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6; color: #ffc107;">Moderate</th>
+                  <th style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6; color: #17a2b8;">Minor</th>
+                  <th style="padding: 8px 12px; text-align: center; border-bottom: 1px solid #dee2e6; color: #6c757d;">Total (Nodes)</th>
                 </tr>
               </thead>
               <tbody>
